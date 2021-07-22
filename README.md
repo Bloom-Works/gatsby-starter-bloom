@@ -93,6 +93,14 @@ A Gatsby starter created by Bloom Works
     [commitlint](https://github.com/conventional-changelog/commitlint) is configured to make sure this specification is enforced.
     You can use `npm run commit` command to commit your changes which is using [prompt](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/prompt-cli) to create the commit messages.
 
+## Storybook
+
+This project uses Storybook to build and test component states in isolation. The configuration for Storybook is in `/.storybook/main.js` and `/.storybook/preview.js`. You can read more about storybook configuration with a Gatsby site in the [Gatsby docs for storybook](https://www.gatsbyjs.com/docs/how-to/testing/visual-testing-with-storybook/). If you want more information about Storybook or writing components and stories for Storybook, you can find [Storybook docs on their website](https://storybook.js.org/docs/react/get-started/introduction).
+
+To launch the storybook app for this project, run `npm run storybook`. This command will trigger `gatsby clean` & `gatsby build`, set the node environment to `test`, and start the storybook application at `http://localhost:6006`. To start the storybook application without cleaning and rebuilding gatsby, run `npm run start-storybook`.
+
+When writing new stories for components, name the file `<Component>.stories.tsx` in the `src/components/**/*` directories, and place it in the same directory as the component. You can also place stories in `src/stories/`, but you must name the file with the suffix `.stories.tsx` in order for it to be included in Storybook. If you need to add more directories to the Storybook configuration, do so in `/.storybook/main.js` in the stories array.
+
 ## Cypress
 
 Cypress is built into this project. You will need to terminals to run Cypress tests. Run `npm start` first and run the command below in another terminal to open a cypress browser. Once opened, you can click on a designated file or all files to run end-to-end tests:
