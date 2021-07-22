@@ -1,18 +1,17 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
 import Seo from './Seo';
+import { mockStaticData } from '../../../test/test-utils';
+import { SiteData } from '../../types/siteMetadata';
 
 describe('SEO component', () => {
   beforeAll(() => {
-    useStaticQuery.mockReturnValue({
+    mockStaticData<SiteData>({
       site: {
         siteMetadata: {
           title: 'Dashboard',
-          description: 'Testing description',
-          author: 'foo',
         },
       },
     });
@@ -20,13 +19,11 @@ describe('SEO component', () => {
 
   it('renders the tests correctly', () => {
     const mockTitle = 'All posts | Dashboard';
-    const mockDescription = 'Testing description';
 
     render(<Seo title="All posts" />);
     const { title, metaTags } = Helmet.peek();
 
     expect(title).toBe(mockTitle);
-    expect(metaTags[0].content).toBe(mockDescription);
     expect(metaTags.length).toBe(8);
   });
 });

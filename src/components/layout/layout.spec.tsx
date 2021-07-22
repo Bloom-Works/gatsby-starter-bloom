@@ -5,6 +5,8 @@ import { mockStaticData } from '../../../test/test-utils';
 
 import Layout from './Layout';
 
+const mockContentData = { home: { title: '' } };
+
 describe('Layout', () => {
   it('renders a header', () => {
     mockStaticData<SiteData>({
@@ -16,7 +18,7 @@ describe('Layout', () => {
     });
 
     const { container } = render(
-      <Layout>
+      <Layout content={mockContentData}>
         <p>children text</p>
       </Layout>,
     );
@@ -35,7 +37,7 @@ describe('Layout', () => {
     });
 
     const { getByText } = render(
-      <Layout>
+      <Layout content={mockContentData}>
         <p>{text}</p>
       </Layout>,
     );
