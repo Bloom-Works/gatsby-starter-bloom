@@ -48,6 +48,7 @@ cypress/videos
 cypress/screenshots
 cypress/integration/1-*
 cypress/integration/2-*
+cypress/fixtures/example*
 
 # VS Code
 .vscode/

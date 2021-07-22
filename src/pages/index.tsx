@@ -1,11 +1,13 @@
 import React from 'react';
+import Layout from '../components/layout/Layout';
+import { Content } from '../types/siteMetadata';
 
-import Layout from '../components/layout/layout';
+import content from './index.content.yml';
 
 export default function IndexPage() {
   return (
-    <Layout>
-      <h1>Report</h1>
+    <Layout content={content as Content}>
+      <h1>Dashboard</h1>
     </Layout>
   );
 }

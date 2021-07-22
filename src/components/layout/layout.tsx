@@ -1,30 +1,19 @@
 import React, { ReactNode } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { SiteData } from '../../types/siteMetadata';
+import { Content } from '../../types/siteMetadata';
 
-import Header from '../header/header';
-import SEO from '../seo/seo';
+import Header from '../header/Header';
+import SEO from '../seo/Seo';
 
 type LayoutProps = {
   children: ReactNode;
+  content: Content;
 };
 
-export default function Layout({ children }: LayoutProps) {
-  const data: SiteData = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `,
-  );
+export default function Layout({ children, content }: LayoutProps) {
   return (
     <div>
-      <SEO title="Progress Dashboard" />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <SEO title="Dashboard" />
+      <Header siteTitle={content.home.title} />
       <main>{children}</main>
     </div>
   );

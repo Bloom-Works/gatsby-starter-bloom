@@ -1,18 +1,18 @@
 backend:
   name: github
-  repo: Bloom-Works/progress-dashboard
+  repo: Bloom-Works/gatsby-starter-bloom
   branch: production
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - label: "Main Page"
-        name: "index"
-        file: "src/pages/index.content.yml"
+      - label: 'Main Page'
+        name: 'index'
+        file: 'src/pages/index.content.yml'
         fields:
           - label: Home
             name: home

@@ -3,14 +3,14 @@ import { render } from '@testing-library/react';
 import { useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 
-import Seo from './seo';
+import Seo from './Seo';
 
 describe('SEO component', () => {
   beforeAll(() => {
     useStaticQuery.mockReturnValue({
       site: {
         siteMetadata: {
-          title: 'Progress Dashboard',
+          title: 'Dashboard',
           description: 'Testing description',
           author: 'foo',
         },
@@ -19,7 +19,7 @@ describe('SEO component', () => {
   });
 
   it('renders the tests correctly', () => {
-    const mockTitle = 'All posts | Progress Dashboard';
+    const mockTitle = 'All posts | Dashboard';
     const mockDescription = 'Testing description';
 
     render(<Seo title="All posts" />);

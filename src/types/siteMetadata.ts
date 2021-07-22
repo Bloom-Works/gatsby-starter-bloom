@@ -5,3 +5,9 @@ export type SiteData = {
     };
   };
 };
+
+export type Content = {
+  home: {
+    title: string;
+  };
+};
