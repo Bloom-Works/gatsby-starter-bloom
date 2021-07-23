@@ -10,13 +10,10 @@ type LayoutProps = {
 };
 
 export default function Layout({ children, content }: LayoutProps) {
-
-  const title = content ? content.home.title : ''
-
   return (
     <div>
       <SEO title="Dashboard" />
-      <Header siteTitle={title} />
+      <Header siteTitle={content?.home?.title ?? ''} />
       <main>{children}</main>
     </div>
   );
