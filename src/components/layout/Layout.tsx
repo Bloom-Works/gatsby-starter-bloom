@@ -6,14 +6,17 @@ import SEO from '../seo/Seo';
 
 type LayoutProps = {
   children: ReactNode;
-  content: Content;
+  content?: Content;
 };
 
 export default function Layout({ children, content }: LayoutProps) {
+
+  const title = content ? content.home.title : ''
+
   return (
     <div>
       <SEO title="Dashboard" />
-      <Header siteTitle={content.home.title} />
+      <Header siteTitle={title} />
       <main>{children}</main>
     </div>
   );
