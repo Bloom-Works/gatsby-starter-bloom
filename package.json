@@ -8,7 +8,12 @@
   "scripts": {
     "build": "gatsby build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
+    "start": "npm run develop",
+    "develop": "gatsby develop",
+    "docker-build": "docker-compose build",
+    "docker-start": "docker-compose up",
+    "docker-build-start": "docker-compose up --build",
+    "docker-develop": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "jest",
@@ -60,7 +65,7 @@
     "graphql": "14.6.0"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=14.17.4"
   },
   "keywords": [
     "gatsby",
