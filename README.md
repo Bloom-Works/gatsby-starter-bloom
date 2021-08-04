@@ -107,17 +107,17 @@ This starter includes a minimal Docker setup. Be sure to download the necessary 
 
 Follow the steps below to run the Docker image.
 
-1. **Build and run the Docker image:**
+1. **Build the Docker image:**
    &nbsp;
 
    ```shell
-   docker-compose up --build
+   npm run docker-build
    ```
 
 2. **After image has been built, you can simply run:**
    &nbsp;
    ```shell
-   docker-compose up
+   npm run docker-start
    ```
 
 Open a browser and navigate to `http://localhost:3000/`.

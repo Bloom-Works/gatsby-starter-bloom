@@ -4,4 +4,4 @@ COPY package*.json .
 RUN npm ci
 COPY . .
 
-CMD [ "npm", "run", "docker-start" ]
+CMD [ "npm", "run", "docker-develop" ]
