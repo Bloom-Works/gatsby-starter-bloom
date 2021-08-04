@@ -1,16 +1,10 @@
-version: '3.7'
-
+version: "3"
 services:
-  gatsby:
-    container_name: gatsbystarterbloom
+  client:
     build:
-      context: ./
-      dockerfile: Dockerfile
-    ports:
-      - 8000:8000
-    command: ./node_modules/.bin/gatsby develop -H 0.0.0.0
+      context: .
+      dockerfile: Dockerfile.dev
     volumes:
-      - /usr/src/app/node_modules
-      - .:/usr/src/app
-    environment:
-      NODE_ENV: development
+      - ./client/src:/src
+    ports:
+      - "3000:8000"
