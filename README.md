@@ -101,6 +101,27 @@ To launch the storybook app for this project, run `npm run storybook`. This comm
 
 When writing new stories for components, name the file `<Component>.stories.tsx` in the `src/components/**/*` directories, and place it in the same directory as the component. You can also place stories in `src/stories/`, but you must name the file with the suffix `.stories.tsx` in order for it to be included in Storybook. If you need to add more directories to the Storybook configuration, do so in `/.storybook/main.js` in the stories array.
 
+## Docker
+
+This starter includes a minimal Docker setup. Be sure to download the necessary [Docker software](https://www.docker.com/products/docker-desktop) in order to manage and run Docker images.
+
+Follow the steps below to run the Docker image.
+
+1. **Build and run the Docker image:**
+   &nbsp;
+
+   ```shell
+   docker-compose up --build
+   ```
+
+2. **After image has been built, you can simply run:**
+   &nbsp;
+   ```shell
+   docker-compose up
+   ```
+
+Open a browser and navigate to `http://localhost:3000/`.
+
 ## Cypress
 
 Cypress is built into this project. You will need to terminals to run Cypress tests. Run `npm start` first and run the command below in another terminal to open a cypress browser. Once opened, you can click on a designated file or all files to run end-to-end tests:
